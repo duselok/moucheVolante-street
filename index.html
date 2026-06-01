@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mouche Volante - Hamburg Crossing</title>
+  <!-- Preload kritisches Hintergrundbild SOFORT, parallel zum HTML-Parsing -->
+  <link rel="preload" as="image" href="bg-hamburg-crossing.png" fetchpriority="high" />
+  <!-- p5.js LOKAL gehostet (war CDN cdnjs) â€“ kein externer HÃ¤nger mehr,
+       dieselbe Origin wie alles andere, kein DNS/TLS/Cold-Start-Risiko. -->
+  <script src="p5.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; overflow: hidden; width: 100%; height: 100%; }
+    /* Hintergrund: deutlich grÃ¶ÃŸer als Viewport, damit Parallax-Schwenk
+       NIEMALS den weiÃŸen Editor-Hintergrund am Rand zeigt.
+       140vw/140vh + -20vw/-20vh = 20vw Reserve in jede Richtung,
+       Parallax bewegt sich max Â±12vw â†’ bleibt klar innerhalb. */
+    #bg {
+      position: fixed; z-index: 0;
+      width: 140vw; height: 140vh;
+      left: -20vw; top: -20vh;
+      background: url('bg-hamburg-crossing.png') center/cover no-repeat;
+      transition: none;
+      transform-origin: center center;
+      will-change: transform;
+    }
+    /* Sonnenlicht-Glare oben links */
+    #sun-glare {
+      position: fixed; top: -10%; left: -5%; z-index: 1;
+      width: 60vw; height: 60vw;
+      background: radial-gradient(circle, rgba(255,250,220,0.45) 0%, rgba(255,240,180,0.15) 35%, transparent 70%);
+      pointer-events: none;
+    }
+    canvas {
+      position: fixed !important; inset: 0; z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div id="bg"></div>
+  <div id="sun-glare"></div>
+  <script src="mouche-volante.js"></script>
+</body>
+</html>
+
