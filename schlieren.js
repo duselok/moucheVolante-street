@@ -17,7 +17,7 @@ let frameIndex = 0;
 let motionTotal = { x: 0, y: 0 };
 const SCHLIERE_SPRITE_REFRESH_FRAMES = 4;
 const SCHLIEREN_ALPHA_MUL = 2.43;
-const SCHLIEREN_THICKNESS_MUL = 0.66;
+const SCHLIEREN_THICKNESS_MUL = 0.61;
 
 const SCHLIEREN = [
   { x: 0.31, y: 0.34, len: 360, thick: 0.56, curve: 58, angle: -48, alpha: 0.86, seed: 1.7, shape: 'comma', fleckAlpha: 0.72 },
