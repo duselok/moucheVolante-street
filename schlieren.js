@@ -20,7 +20,7 @@ const SCHLIEREN_ALPHA_MUL = 2.43;
 const SCHLIEREN_THICKNESS_MUL = 0.55;
 const GREY_SCHLIEREN_ALPHA_MUL = 0.32;
 const LIGHT_SCHLIEREN_ALPHA_MUL = 2.35;
-const SHOW_LIGHT_SCHLIEREN_MARKERS = true;
+const SHOW_LIGHT_SCHLIEREN_MARKERS = false;
 
 const SCHLIEREN = [
   { x: 0.31, y: 0.34, len: 360, thick: 0.56, curve: 58, angle: -48, alpha: 0.86, seed: 1.7, shape: 'comma', fleckAlpha: 0.72 },
