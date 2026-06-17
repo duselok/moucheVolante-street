@@ -666,7 +666,7 @@ function updateMotion() {
   const dt = Math.min(50, now - lastFrameAt);
   lastFrameAt = now;
   const movingNow = now - lastMoveAt < 180;
-  const ease = 1 - Math.exp(-dt / (movingNow ? 125 : 82));
+  const ease = 1 - Math.exp(-dt / (movingNow ? 125 : 170));
   const directionEase = 1 - Math.exp(-dt / 105);
   if (movingNow) {
     const targetAngle = Math.atan2(moveVector.y, moveVector.x);
